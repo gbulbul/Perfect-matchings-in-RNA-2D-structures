@@ -1,0 +1,15 @@
+sequence = 'AGCUAGUCAU'                       
+def factorial(n):
+    return 1 if (n==1 or n==0) else n * factorial(n - 1) 
+           
+def matching_for_nts(sequence):
+    AU,GC = 0,0                             
+    for nt in sequence:                        
+        if nt == 'A':                        
+           AU += 1                            
+        elif nt == 'G':                        
+           GC += 1                            
+
+    matchings = factorial(AU) * factorial(GC)
+    return matchings
+print(matching_for_nts(sequence))                           
